@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7vk5liv0nlfn"]
+
+[ext_resource type="Script" path="res://scripts/Score.gd" id="1_v1h68"]
+
+[node name="Score" type="Node2D"]
+script = ExtResource("1_v1h68")
+
+[node name="Score1" type="Label" parent="."]
+offset_left = 504.0
+offset_top = 64.0
+offset_right = 515.0
+offset_bottom = 89.0
+text = "0"
+
+[node name="Score2" type="Label" parent="."]
+offset_left = 640.0
+offset_top = 64.0
+offset_right = 650.0
+offset_bottom = 87.0
+text = "0
+"

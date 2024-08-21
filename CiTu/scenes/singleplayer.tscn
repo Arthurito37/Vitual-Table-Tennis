@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcsqv5t048swq"]
+
+[ext_resource type="PackedScene" uid="uid://d2pte6a7ohj4h" path="res://prefabs/ball.tscn" id="1_eq7oj"]
+[ext_resource type="PackedScene" uid="uid://dwo0nhi6quneb" path="res://prefabs/left_area.tscn" id="2_jq3d3"]
+[ext_resource type="PackedScene" uid="uid://bs7ig1dold6kp" path="res://prefabs/right_area.tscn" id="3_5brpa"]
+[ext_resource type="PackedScene" uid="uid://dusgqn1c6kb6q" path="res://prefabs/wall.tscn" id="4_m0011"]
+[ext_resource type="Script" path="res://scenes/BOT.gd" id="5_kg4ik"]
+[ext_resource type="PackedScene" uid="uid://b7vk5liv0nlfn" path="res://prefabs/score.tscn" id="6_nqxer"]
+[ext_resource type="PackedScene" uid="uid://beoxnypbf5u0w" path="res://prefabs/player_1.tscn" id="7_mqk8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsfhp"]
+size = Vector2(16, 152)
+
+[node name="singleplayer" type="Node2D"]
+
+[node name="Ball" parent="." instance=ExtResource("1_eq7oj")]
+position = Vector2(557, 322)
+
+[node name="LeftArea" parent="." instance=ExtResource("2_jq3d3")]
+position = Vector2(-43, 322)
+
+[node name="RightArea" parent="." instance=ExtResource("3_5brpa")]
+position = Vector2(-79, 645)
+
+[node name="Wall" parent="." instance=ExtResource("4_m0011")]
+position = Vector2(0, 1)
+
+[node name="Wall2" parent="." instance=ExtResource("4_m0011")]
+position = Vector2(4, 619)
+
+[node name="BOT" type="StaticBody2D" parent="."]
+position = Vector2(1128, 336)
+script = ExtResource("5_kg4ik")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BOT"]
+shape = SubResource("RectangleShape2D_vsfhp")
+one_way_collision_margin = 0.0
+
+[node name="Score" parent="." instance=ExtResource("6_nqxer")]
+scale = Vector2(0.955819, 1.01946)
+
+[node name="player1" parent="." instance=ExtResource("7_mqk8e")]
+position = Vector2(42, 330)

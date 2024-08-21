@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://beoxnypbf5u0w"]
+
+[ext_resource type="Script" path="res://scripts/player1.gd" id="1_lc1m3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vjwsu"]
+height = 156.0
+
+[node name="player1" type="StaticBody2D" groups=["rackets"]]
+position = Vector2(72, 319)
+script = ExtResource("1_lc1m3")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_vjwsu")

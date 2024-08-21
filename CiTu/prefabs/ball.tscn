@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2pte6a7ohj4h"]
+
+[ext_resource type="Script" path="res://scripts/Ball.gd" id="1_85l5p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhtq6"]
+radius = 31.1448
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_duybb"]
+radius = 33.0
+
+[node name="Ball" type="CharacterBody2D"]
+position = Vector2(582, 300)
+script = ExtResource("1_85l5p")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xhtq6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_duybb")
+debug_color = Color(0.805631, 0.415926, 0.000836898, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
